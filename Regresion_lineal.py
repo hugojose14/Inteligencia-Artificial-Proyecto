@@ -25,7 +25,16 @@ def dataSet():
 
     return distancia,tiempo,precio
 
+def Recargo_nocturno(precio):
+    print("\n¿Se aplica recargo nocturno a la tarifa?")
+    recargo_n=input(" si o no: ")
 
+    if( recargo_n =="si" or recargo_n=="Si"):
+        precio+=500
+        print("\nprecio final: ",precio)
+    else:
+        print("\nprecio final: ",precio)
+        
 
 if __name__ == "__main__":
     distancia,tiempo,precio=dataSet()
@@ -64,19 +73,12 @@ if __name__ == "__main__":
     x2=int(input("digite el tiempo en m: "))
 
     h=lr_multiple.intercept_ + (lr_multiple.coef_[0]*x1)+(lr_multiple.coef_[1]*x2)
-    print("\nprecio: ",h)
-    print("\n¿Se aplica recargo nocturno a la tarifa?")
-    recargo_n=input(" si o no: ")
+    print("\nprecio parcial: ",h)
 
-    if( recargo_n =="si" or recargo_n=="Si"):
-        h+=500
-    else:
-        print("\nprecio: ",h)
-        
+    #función de recargo nocturno 
+    Recargo_nocturno(h)
 
-    print("\nprecio: ",h)
-
-    
+   
 
   
 
