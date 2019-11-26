@@ -12,12 +12,11 @@ from sklearn import linear_model
 
 def dataSet():
 
-    with open ('precios.csv','r') as f:
+    with open ('precios2.csv','r') as f:
        data=list(csv.reader(f,delimiter=","))
 
     data=np.array(data,dtype=np.float)
 
-   
   
     distancia=data[:,0]
     tiempo=data[:,1]
